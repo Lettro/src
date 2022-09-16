@@ -10,29 +10,25 @@ const scans = {
   "Solana Explorer": "https://solscan.io/tx/"
 };
 
-const searchAddressOnScan = (scanUrl, selectedAddress) => {
-  chrome.tabs.create({  
-    url: scanUrl + selectedAddress
-  });
-};
-
 chrome.contextMenus.create({
   id: "searchAddressOn",
   title: "Search address on",
   contexts: ["selection"]
 });
 
-for (const scanTitle in scans) {
-  const scanUrl = scans[scanTitle];
-
+Object.entries(scans).forEach(([scanTitle, scanUrl]) => {
   chrome.contextMenus.create({
-    id: scanUrl,
     parentId: "searchAddressOn",
     title: scanTitle,
-    contexts: ["selection"]
+    contexts: ["selection"],
+    onclick: info => {
+      searchAddressOnScan(scanUrl, info.selectionText);
+    }
   });
-}
-
-chrome.contextMenus.onClicked.addListener(info => {
-  searchAddressOnScan(info.menuItemId, info.selectionText)
 });
+
+const searchAddressOnScan = (scanUrl, selectedAddress) => {
+  chrome.tabs.create({  
+    url: scanUrl + selectedAddress
+  });
+};

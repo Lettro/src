@@ -1,13 +1,18 @@
 const scans = {
-  "Bitcoin Explorer": "https://www.blockchain.com/btc/tx/",
   "Ethereum Explorer": "https://etherscan.io/address/",
-  "Binance Smart Chain Explorer": "https://bscscan.com/token/",
   "Polygon Explorer": "https://polygonscan.com/address/",
+  "Solana Explorer": "https://solscan.io/tx/",
   "Cardano Explorer": "https://explorer.cardano.org/en/transaction?id=",
   "Terra Explorer": "https://finder.terra.money/columbus-5/tx/",
   "Arbitrum Explorer": "https://arbiscan.io/address/",
   "Fantom Explorer": "https://ftmscan.com/tx/",
-  "Solana Explorer": "https://solscan.io/tx/"
+  "OpenSea": "https://opensea.io/assets?search[query]=",
+  "DeBank": "https://debank.com/profile/",
+  "Zerion": "https://app.zerion.io/",
+  "Zapper": "https://zapper.fi/account/",
+  "Sudoswap": "https://sudoswap.xyz/#/browse/buy/",
+  "Bitcoin Explorer": "https://www.blockchain.com/btc/tx/",
+  "Binance Smart Chain Explorer": "https://bscscan.com/token/",
 };
 
 chrome.contextMenus.create({
